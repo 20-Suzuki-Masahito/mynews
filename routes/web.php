@@ -15,16 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// PHP/Laravel09 課題4
 Route::group(['prefix' => 'admin'], function(){
     Route::get('news/create', 'Admin\NewsController@add');
+    Route::get('profile/create', 'Admin\ProfileController@add');
+    Route::get('profile/edit', 'Admin\ProfileController@edit');
 });
 
 // PHP/Laravel09 課題3 *AAAControllerはAdminディレクトリ下に保存されているものとする
 Route::get('XXX', 'Admin\AAAController@bbb');
 
-// PHP/Laravel09 課題4
-Route::group(['prefix' => 'admin'], function(){
-    Route::get('profile/create', 'Admin\ProfileController@add');
-    Route::get('profile/edit', 'Admin\ProfileController@edit');
-});
 
