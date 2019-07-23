@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($posts as $profile)
+                        @foreach($profile as $profile)
                             <tr>
                                 <th>{{ $profile->id }}</th>
                                 <td>{{ str_limit($profile->name, 100) }}</td>
