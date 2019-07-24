@@ -3,6 +3,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
+use App\Updatelog;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -62,6 +64,11 @@ class ProfileController extends Controller
         unset($profile_form['_token']);
         // 該当するデータを上書きして保存する
         $profile->fill($profile_form)->save();
+        
+        $updatelog = new Updatelog;
+        $updatelog->profile_id = $profile->id;
+        $updatelog->edited_at = Carbon::now();
+        $updatelog->save();
        
         return redirect('admin/profile');
     }
