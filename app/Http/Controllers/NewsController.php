@@ -23,7 +23,7 @@ class NewsController extends Controller
         else {
             $headline = null;
         }
-        return view('news.index', ['headline' => $headline, 'posts' => $posts, 'cond_title' => $cond_title]);
+        return view('news.index', ['headline' => $headline, 'posts' => $posts]);
     }
     public function profile(Request $request)
     {
@@ -35,6 +35,6 @@ class NewsController extends Controller
             $profiles = Profile::all()->sortByDesc('updated_at');
         }
        
-        return view('news.profile', ['profiles' => $profiles, 'cond_name' => $cond_name]);
+        return view('news.profile', ['profiles' => $profiles]);
     }
 }
