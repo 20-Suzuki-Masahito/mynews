@@ -39,3 +39,7 @@ Route::get('XXX', 'Admin\AAAController@bbb');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'NewsController@index');
+
+Route::get('/profile', 'NewsController@profile');
