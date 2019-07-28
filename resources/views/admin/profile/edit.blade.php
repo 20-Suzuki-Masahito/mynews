@@ -24,10 +24,14 @@
                         <label class="col-md-2" for="gender">性別</label>
                         <div class="col-md-10 form-inline">
                             <div class="radio" style="margin-right:10px;">
-                                <label for="man"><input type="radio" value="男性" name="gender" id="man">男性</label>
+                                <label for="man">
+                                    <input type="radio" value="男性" name="gender" id="man" {{ $profile_form->gender == '男性' ? 'checked="checked"' : '' }}>
+                                男性</label>
                             </div>
                             <div class="radio" style="margin-left:10px;">
-                                <label for="woman"><input type="radio" value="女性" name="gender" id="woman">女性</label>
+                                <label for="woman">
+                                    <input type="radio" value="女性" name="gender" id="woman" {{ $profile_form->gender == '女性' ? 'checked="checked"' : '' }}>
+                                女性</label>
                             </div>
                         </div>
                     </div>
